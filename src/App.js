@@ -1,24 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from "./components/Sidebar/Sidebar";
+import Navbar from "./components/Navbar/Navbar";
+import Dashboard from "./pages/Dashboard/Dashboard";
+
+import "./App.css";
+import "./components/Sidebar/SidebarStyles.css";
+import "./components/Navbar/NavbarStyles.css";
+
+// Theming
+import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import 'fontsource-roboto';
+
+const theme = createMuiTheme({
+  palette:{
+    primary:{
+      main: '#1d1d1d' 
+    },
+    // brand: '#FFD216'
+  },
+
+  // shape:{
+  //   borderRadius: 25
+  // },
+  spacing: 8,
+  
+  overrides:{
+    MuiButton:{
+      root:{
+        textTransform: "none"
+      }
+    }
+  },
+  props:{
+    MuiButton:{
+      disableRipple: true,
+      variant: 'contained',
+      color: 'primary'
+    },
+    MuiCheckbox:{
+      disableRipple: true
+    },
+    MuiPaper:{
+      // elevation: 0.5  
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Sidebar />
+        <div className="wrapper">
+          <Navbar />
+          <div className="main">
+            <Dashboard/>
+          </div>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
