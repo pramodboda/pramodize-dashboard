@@ -40,7 +40,7 @@ const theme = createMuiTheme({
       disableRipple: true
     },
     MuiPaper:{
-      // elevation: 0.5  
+      // elevation: 0.5
     }
   }
 });
