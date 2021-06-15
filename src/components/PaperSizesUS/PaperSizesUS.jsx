@@ -10,12 +10,11 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'unitCM', label: 'Centimeters', minWidth: 100 },
+  { id: 'name', label: 'Name'},
+  { id: 'unitCM', label: 'Centimeters'},
   {
     id: 'unitInches',
     label: 'Inches',
-    minWidth: 170,
     align: 'right',
   }
 ];
@@ -25,9 +24,9 @@ function createData(name, unitCM, unitInches) {
 }
 
 const rows = [
-  createData('A4', '21 x 29.7','8.3 x 11.7'),
-  createData('A3', '26.7 x 42','11.7 x 16.5'),
-  createData('A2', '42 x 59.4','16.5 x 23.4'),
+  createData('Arch A', '22.9 x 30.5','9 x 12'),
+  createData('Arch B', '30.5 x 45.7','12 x 18'),
+  createData('Arch C', '45.7 x 61','18 x 24'),
   createData('A1', '59.4 x 84.1','23.4 x 33.1'),
   createData('A0', '84.1 x 118.9','33.1 x 46.8'),
 ];
@@ -41,7 +40,7 @@ const useStyles = makeStyles({
   },
 });
 
- const PaperSizesDataTable = () => {
+ const PaperSizesUS = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -104,4 +103,4 @@ const useStyles = makeStyles({
 }
 
 
-export default PaperSizesDataTable;
+export default PaperSizesUS;

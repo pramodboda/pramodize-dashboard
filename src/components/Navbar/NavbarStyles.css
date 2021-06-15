@@ -3,3 +3,18 @@
     background-color: #f9f9f9 !important;
 }
 
+
+.MuiAppBar-colorPrimary .MuiSvgIcon-root .fa-primary {
+    color: #A56EFF;
+    opacity: .5;
+  }
+  
+  .pramodize-dashboard-navbar-top .MuiSvgIcon-root, .MuiAppBar-colorPrimary .MuiSvgIcon-root .fa-secondary {
+    color: #8A3FFC;
+  }
+
+  /* .MuiAppBar-colorPrimary .MuiSvgIcon-root .notificationIcon {
+    color: #1d1d1d;
+    position: relative;
+  } */
+

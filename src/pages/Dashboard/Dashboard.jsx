@@ -3,14 +3,17 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import MainCard from '../../components/MainCard/MainCard';
-import SimpleAreaChart from '../../components/SimpleAreaChart/SimpleAreaChart';
-import RadialBarChartEx from '../../components/RadialBarChartEx/RadialBarChartEx';
-import CustomActiveShapePieChart from '../../components/CustomActiveShapePieChart/CustomActiveShapePieChart';
 
-import PaperSizesDataTable from '../../components/PaperSizesDataTable/PaperSizesDataTable';
+import FeaturedCard from '../../components/FeaturedCard/FeaturedCard';
 
+import SimpleAreaChart from '../../components/Graphs/SimpleAreaChart/SimpleAreaChart';
+import RadialBarChartEx from '../../components/Graphs/RadialBarChartEx/RadialBarChartEx';
+import CustomActiveShapePieChart from '../../components/Graphs/CustomActiveShapePieChart/CustomActiveShapePieChart';
 
+import PaperSizesA from '../../components/PaperSizesA/PaperSizesA';
+import PaperSizesUS from '../../components/PaperSizesUS/PaperSizesUS';
+
+import TopCardAreaChart1 from '../../components/Graphs/TopCardAreaChart1/TopCardAreaChart1';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,22 +35,22 @@ const useStyles = makeStyles((theme) => ({
         <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <MainCard bgColor="#ECF7FE" cardTitle="Total Users" currentValue="14.3k" when="Annual"/>
+            <FeaturedCard bgColor="#ECF7FE" cardTitle="Total Users" currentValue="14.3k" when="Annual" tinyGraph={<TopCardAreaChart1/>}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <MainCard bgColor="#EBFFF7" cardTitle="New Users" currentValue="2.6k" when="Weekly"/>
+            <FeaturedCard bgColor="#EBFFF7" cardTitle="New Users" currentValue="2.6k" when="Weekly"/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <MainCard bgColor="#FFF6EB" cardTitle="Sales" currentValue="$986" when="Today"/>
+            <FeaturedCard bgColor="#FFF6EB" cardTitle="Sales" currentValue="$986" when="Today"/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <MainCard bgColor="#F4EFFF" cardTitle="Revenue" currentValue="$34,245" when="Quarter"/>
+            <FeaturedCard bgColor="#F4EFFF" cardTitle="Revenue" currentValue="$34,245" when="Quarter"/>
           </Paper>
         </Grid>
         <Grid item xs={7}>
@@ -76,10 +79,17 @@ const useStyles = makeStyles((theme) => ({
             </Paper>
           </Grid>
 
-          <Grid item xs={7}>
+          <Grid item xs={4}>
+            {/* <Paper className={classes.paper}> */}
+            {/* <Typography variant="h5" component="h5">A Sizes</Typography> */}
+            <PaperSizesA/>
+            {/* </Paper> */}
+          </Grid>
+
+          <Grid item xs={3}>
             <Paper className={classes.paper}>
-            <Typography variant="h5" component="h5">A Sizes</Typography>
-            <PaperSizesDataTable/>
+            <Typography variant="h5" component="h5">US Sizes</Typography>
+            <PaperSizesUS/>
             </Paper>
           </Grid>
 
