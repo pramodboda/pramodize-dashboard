@@ -8,16 +8,15 @@ import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-// import MailIcon from "@material-ui/icons/Mail";
 import Favorite from "@material-ui/icons/Favorite";
-// import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 import Avatar from "@material-ui/core/Avatar";
+import NewMsgMenu from "../Menus/NewMsgMenu/NewMsgMenu";
+import LocalLanguageMenu from "../Menus/LocalLanguageMenu/LocalLanguageMenu";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -84,9 +83,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const avatarImg = makeStyles((theme) => ({
-  root:{
-    padding:0
-  }
+  root: {
+    padding: 0,
+  },
 }));
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -130,13 +129,16 @@ const Navbar = () => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+  };
+
+
+  
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -158,6 +160,7 @@ const Navbar = () => {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
+
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -229,6 +232,7 @@ const Navbar = () => {
     <div className={classes.grow + " pramodize-dashboard-navbar-top"}>
       <AppBar position="sticky">
         <Toolbar>
+        
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -255,27 +259,10 @@ const Navbar = () => {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                {/* <MailIcon /> */}
-                <svg
-                  class="MuiSvgIcon-root"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="currentColor"
-                    class="fa-primary"
-                    d="M127.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S145.7 271.1 127.1 271.1zM256 271.1c-17.75 0-31.1-14.25-31.1-31.1s14.25-32 31.1-32s31.1 14.25 31.1 32S273.8 271.1 256 271.1zM383.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S401.7 271.1 383.1 271.1z"
-                  />
-                  <path
-                    fill="currentColor"
-                    class="fa-secondary"
-                    d="M256 31.1c-141.4 0-255.1 93.12-255.1 208c0 49.62 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734c1.249 3 4.021 4.766 7.271 4.766c66.25 0 115.1-31.76 140.6-51.39c32.63 12.25 69.02 19.39 107.4 19.39c141.4 0 255.1-93.13 255.1-207.1S397.4 31.1 256 31.1zM127.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S145.7 271.1 127.1 271.1zM256 271.1c-17.75 0-31.1-14.25-31.1-31.1s14.25-32 31.1-32s31.1 14.25 31.1 32S273.8 271.1 256 271.1zM383.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S401.7 271.1 383.1 271.1z"
-                  />
-                </svg>
-              </Badge>
-            </IconButton>
+
+          <NewMsgMenu/>
+          
+       
             <IconButton aria-label="show 4 new mails" color="inherit">
               <svg
                 class="MuiSvgIcon-root"
@@ -314,9 +301,6 @@ const Navbar = () => {
                   />
                 </svg>
                 <div class="circleAni"></div>
-                <div class="circleAni"></div>
-                <div class="circleAni"></div>
-                <div class="circleAni"></div>
               </Badge>
             </IconButton>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -338,38 +322,29 @@ const Navbar = () => {
                 />
               </svg>
             </IconButton>
-
-            {/* <Avatar
-              className={classes.avatar}
+            <LocalLanguageMenu/>
+            <IconButton
+              className={classes2.root}
+              color="primary"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
-              color="inherit" 
-              src="https://images.generated.photos/-0jgmdYA_2h2alD69Tnww7KzLOBqxYJ2RFat3D8FCJE/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yz/XzA5NDY1NzYuanBn.jpg"
-            /> */}
-            <IconButton className={classes2.root} color="primary"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}>
-            <StyledBadge
-
-              overlap="circle"
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "right",
-              }}
-              variant="dot"
             >
-              <Avatar
-                
-                alt="UserName"
-                src="https://images.generated.photos/-0jgmdYA_2h2alD69Tnww7KzLOBqxYJ2RFat3D8FCJE/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yz/XzA5NDY1NzYuanBn.jpg"
-              />
-            </StyledBadge>
+              <StyledBadge
+                overlap="circle"
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "right",
+                }}
+                variant="dot"
+              >
+                <Avatar
+                  alt="UserName"
+                  src="https://images.generated.photos/-0jgmdYA_2h2alD69Tnww7KzLOBqxYJ2RFat3D8FCJE/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yz/XzA5NDY1NzYuanBn.jpg"
+                />
+              </StyledBadge>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

@@ -13,7 +13,7 @@ import 'fontsource-roboto';
 const theme = createMuiTheme({
   palette:{
     primary:{
-      main: '#1d1d1d' 
+      main: '#8A3FFC' 
     },
     // brand: '#FFD216'
   },
@@ -31,11 +31,11 @@ const theme = createMuiTheme({
     }
   },
   props:{
-    MuiButton:{
-      disableRipple: true,
-      variant: 'contained',
-      color: 'primary'
-    },
+    // MuiButton:{
+    //   disableRipple: true,
+    //   variant: 'contained',
+    //   color: 'primary'
+    // },
     MuiCheckbox:{
       disableRipple: true
     },
