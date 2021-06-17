@@ -16,6 +16,8 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 
 import Avatar from "@material-ui/core/Avatar";
 import NewMsgMenu from "../Menus/NewMsgMenu/NewMsgMenu";
+import UserFriendsMenu from "../Menus/UserFriendsMenu/UserFriendsMenu";
+import CartMenu from "../Menus/CartMenu/CartMenu";
 import LocalLanguageMenu from "../Menus/LocalLanguageMenu/LocalLanguageMenu";
 
 const useStyles = makeStyles((theme) => ({
@@ -261,26 +263,7 @@ const Navbar = () => {
           <div className={classes.sectionDesktop}>
 
           <NewMsgMenu/>
-          
-       
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <svg
-                class="MuiSvgIcon-root"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path
-                  fill="currentColor"
-                  class="fa-primary"
-                  d="M224 256c70.7 0 128-57.31 128-128S294.7 0 224 0C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3c-95.73 0-173.3 77.6-173.3 173.3C0 496.5 15.52 512 34.66 512H413.3C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
-                />
-                <path
-                  fill="currentColor"
-                  class="fa-secondary"
-                  d="M479.1 320h-73.85C451.2 357.7 480 414.1 480 477.3C480 490.1 476.2 501.9 470 512h138C625.7 512 640 497.6 640 479.1C640 391.6 568.4 320 479.1 320zM432 256C493.9 256 544 205.9 544 144S493.9 32 432 32c-25.11 0-48.04 8.555-66.72 22.51C376.8 76.63 384 101.4 384 128c0 35.52-11.93 68.14-31.59 94.71C372.7 243.2 400.8 256 432 256z"
-                />
-              </svg>
-            </IconButton>
+          <UserFriendsMenu/>
 
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
@@ -306,22 +289,7 @@ const Navbar = () => {
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Favorite />
             </IconButton>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <svg
-                class="MuiSvgIcon-root"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 576 512"
-              >
-                <path
-                  class="fa-primary"
-                  d="M243.1 2.724C231.3-3.4 216.8 1.193 210.7 12.94L106.7 212.9c-6.109 11.75-1.531 26.25 10.22 32.34C120.5 247.1 124.3 248 127.1 248c8.656 0 17.03-4.719 21.31-12.94l103.1-200C259.4 23.32 254.8 8.818 243.1 2.724zM469.3 212.9l-104-200c-6.141-11.78-20.56-16.37-32.36-10.22c-11.75 6.094-16.33 20.59-10.22 32.34l103.1 200c4.281 8.218 12.64 12.94 21.31 12.94c3.734 0 7.516-.875 11.06-2.719C470.8 239.2 475.4 224.7 469.3 212.9z"
-                />
-                <path
-                  class="fa-secondary"
-                  d="M560 192l-101.6 .0012l10.89 20.94c6.109 11.75 1.531 26.25-10.22 32.34c-3.547 1.844-7.328 2.719-11.06 2.719c-8.672 0-17.03-4.719-21.31-12.94l-22.38-43.07H171.7L149.3 235.1C145 243.3 136.6 248 127.1 248c-3.734 0-7.516-.875-11.06-2.719C105.2 239.2 100.6 224.7 106.7 212.9l10.89-20.94L16 192c-8.836 0-16 7.164-16 15.1v32c0 8.836 7.164 15.1 16 15.1h23.11l45.75 205.9C91.37 491.2 117.3 512 147.3 512h281.3c29.1 0 55.97-20.83 62.48-50.12l45.75-205.9H560c8.838 0 16-7.164 16-15.1V208C576 199.2 568.8 192 560 192z"
-                />
-              </svg>
-            </IconButton>
+            <CartMenu/>
             <LocalLanguageMenu/>
             <IconButton
               className={classes2.root}

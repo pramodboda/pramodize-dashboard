@@ -1,9 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-// import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
-// import ListItemText from "@material-ui/core/ListItemText";
-// import ListItemIcon from "@material-ui/core/ListItemIcon";
+
 
 import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -13,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: theme.palette.background.paper,
   },
+
   localFlag: {
     width: "24px",
     heigth: "24px",
@@ -93,8 +91,27 @@ const LocalLanguageMenu = () => {
     setAnchorEl(null);
   };
 
+  const indianCurrencyFormat = (digit) => {
+    var x=12345652457.557;
+    x=x.toString();
+    var afterPoint = '';
+    if(x.indexOf('.') > 0)
+       afterPoint = x.substring(x.indexOf('.'),x.length);
+    x = Math.floor(x);
+    x=x.toString();
+    var lastThree = x.substring(x.length-3);
+    var otherNumbers = x.substring(0,x.length-3);
+    if(otherNumbers != '')
+        lastThree = ',' + lastThree;
+    var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+    
+    console.log(res);
+  }
+
   return (
+  
     <div className={classes.root}>
+      {indianCurrencyFormat}
       <IconButton
         aria-haspopup="true"
         aria-controls="lock-menu"

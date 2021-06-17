@@ -10,6 +10,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
 import ListItemText from "@material-ui/core/ListItemText";
+import ListSubheader from "@material-ui/core/ListSubheader";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
@@ -86,8 +87,9 @@ const NewMsgMenu = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <List className={classes.root}>
-          <ListItem alignItems="flex-start">
+        <List subheader={<ListSubheader align="center">4 New Messages</ListSubheader>} className={classes.root}>
+        <Divider component="li" />
+          <ListItem button alignItems="flex-start">
             <ListItemAvatar>
               <StyledBadge
                 overlap="circle"
@@ -120,8 +122,8 @@ const NewMsgMenu = () => {
               }
             />
           </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <Divider component="li" />
+          <ListItem button alignItems="flex-start">
             <ListItemAvatar>
               <StyledBadge
                 className="userOffline"
@@ -155,8 +157,8 @@ const NewMsgMenu = () => {
               }
             />
           </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <Divider component="li" />
+          <ListItem button alignItems="flex-start">
             <ListItemAvatar>
               <StyledBadge
                 className="userOffline"
@@ -183,8 +185,8 @@ const NewMsgMenu = () => {
             />
           </ListItem>
 
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
+          <Divider component="li" />
+          <ListItem button alignItems="flex-start">
             <ListItemAvatar>
               <StyledBadge
                 className="userOffline"
@@ -210,7 +212,7 @@ const NewMsgMenu = () => {
               }
             />
           </ListItem>
-          <Divider variant="inset" component="li" />
+          <Divider component="li" />
 
         </List>
         <Button color="primary" fullWidth="true">
