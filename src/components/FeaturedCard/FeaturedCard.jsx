@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
 import Grid from "@material-ui/core/Grid";
 
+import Box from "@material-ui/core/Box";
+
 const useStyles = makeStyles({
   // root: {
   //   minWidth: 275,
@@ -41,13 +43,16 @@ const useStyles = makeStyles({
     color: "rgb(255, 255, 255)",
     marginBottom: "16px",
   },
+  tinyGraphBox:{
+    // display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end'
+
+  },
   tinyGraph: {
-    marginTop: 'auto',
-    flexDirection: 'column',
-    order: 1,
-    flex: '0 1 auto',
-    alignSelf: 'flex-end'
-    // border: '1px solid red'
+    height:'100%',
+    border: '1px solid red',
+    
   },
 });
 
@@ -94,8 +99,10 @@ const FeaturedCard = (props) => {
             </Typography>
           </Grid>
 
-          <Grid item xs={4}>
-            <div className={classes.tinyGraph}>{props.tinyGraph}</div>
+          <Grid item xs={4} className={classes.tinyGraphBox}>
+            <Box >
+              <div className={classes.tinyGraph}>{props.tinyGraph}</div>
+            </Box>
           </Grid>
         </Grid>
       </CardContent>
