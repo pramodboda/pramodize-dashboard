@@ -2,13 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
-
-// import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -16,13 +12,12 @@ import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: "100%",
-    width:600,
+    width: "100%",
     backgroundColor: theme.palette.background.paper,
   },
 
   listStyles:{
-      width: '320px'
+      minWidth: '320px'
   },
   captionTxtStyles:{
       color: "#999"
@@ -160,7 +155,6 @@ const UserFriendsMenu = () => {
 
 
       <Menu
-        className ={classes.listStyles}
         id="simple-menu"
         anchorEl={anchorEl}
         keepMounted

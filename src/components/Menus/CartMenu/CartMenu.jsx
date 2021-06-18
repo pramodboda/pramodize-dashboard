@@ -4,42 +4,43 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import Badge from "@material-ui/core/Badge";
 import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
 
 import Grid from "@material-ui/core/Grid";
 
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+
+import Typography from "@material-ui/core/Typography";
+
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
 import StepperInput from "../../Buttons/StepperInput/StepperInput";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 100,
+    width: "100%",
     // maxWidth: "36ch",
-     border: '1px solid red',
+    border: "1px solid red",
     backgroundColor: "theme.palette.background.paper",
-    
   },
-  inline: {
-    display: "inline",
+  listItemStyles: {
+    minWidth: "480px",
+    // border: '1px solid red'
   },
   cartProductImg: {
     width: "60px",
-    //   border: '1px solid red'
   },
   cartProductName: {
     width: "100px",
   },
-  listItemStyles:{
-      width: '800px',
-      border: '1px solid red'
+  buttonBox: {
+    width: "100%",
+    heigth: 100,
+    display: "flex",
+    justifyContent: "flex-end",
+    alignItems: "flex-end",
   },
-  
 }));
 
 const cartItems = [
@@ -47,21 +48,43 @@ const cartItems = [
     productName: "iPhone 12 Pro",
     productImg:
       "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000",
-    price: "1,59,900",
+    price: 159900,
   },
   {
     productName: "Dell U4919DW",
     productImg:
       "https://i.dell.com/is/image/DellContent//content/dam/global-asset-library/Products/peripherals_dell/Monitors/ultrasharp/u4919dw/u4919dw_ldk_0003.psd?fmt=pjpg&amp;pscan=auto&amp;scl=1&amp;hei=402&amp;wid=356&amp;qlt=85,0&amp;resMode=sharp2&amp;op_usm=1.75,0.3,2,0&amp;size=356,402",
-    price: "2,29,269",
+    price: 229269,
   },
   {
     productName: "iPad Pro",
     productImg:
       "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-select-cell-spacegray-202104_GEO_IN?wid=470&hei=556&fmt=p-jpg&qlt=95&.v=1617920526000",
-    price: "2,12,900",
+    price: 212900,
   },
 ];
+
+//Reduce helper function for js object
+let totalPrice = Object.values(cartItems).reduce((accumulator, { price }) => {
+  return accumulator + price;
+}, 0);
+
+// Displaying a number in Indian format
+const numberToIndianPrice = (num) => {
+    let x = num;
+    x = x.toString();
+    let afterPoint = "";
+    if (x.indexOf(".") > 0) {
+      afterPoint = x.substring(x.indexOf("."), x.length);
+    }
+    x = Math.floor(x);
+    x = x.toString();
+    let lastThree = x.substring(x.length - 3);
+    let otherNumbers = x.substring(0, x.length - 3);
+    if (otherNumbers !== "") lastThree = "," + lastThree;
+    return otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
+}
+
 
 const CartMenu = () => {
   const classes = useStyles();
@@ -82,7 +105,7 @@ const CartMenu = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <Badge badgeContent={3} color="secondary">
+        <Badge badgeContent={cartItems.length} color="secondary">
           <svg
             class="MuiSvgIcon-root"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,51 +129,46 @@ const CartMenu = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-        
       >
         {cartItems.map((item) => (
           <div>
-            <ListItem alignItems="center">
-                
-              <Grid container alignItems="center">
-                  <Grid item>
+            <ListItem>
+
+              <Grid
+                container
+                alignItems="center"
+                className={classes.listItemStyles}
+              >
+                <Grid item xs={2}>
                   <img
                     className={classes.cartProductImg}
                     src={item.productImg}
                     alt=""
                   />
-                  </Grid>
-                  <Grid item>
+                </Grid>
+                <Grid item xs={4}>
                   <Typography variant="subtitle2" gutterBottom>
-                  {item.productName}
-                </Typography>
-                  </Grid>
-                  <Grid item>
+                    {item.productName}
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
                   <div>
-                  <StepperInput />
-                </div>
-                  </Grid>
-                  <Grid item>
-                  <div> ₹{item.price}</div>
-                  </Grid>
+                    <StepperInput />
+                  </div>
+                </Grid>
+                <Grid item xs={2}>
+                  <Box textAlign="right"> ₹{numberToIndianPrice(item.price)}</Box>
+                </Grid>
               </Grid>
             </ListItem>
             <Divider component="li" />
           </div>
         ))}
-        <ListItem>
-          <ListItemText
-            primary="TOTAL"
-          />
-          
-          <ListItemSecondaryAction>
-            <Typography variant="h5">₹1,59,900</Typography>
-          </ListItemSecondaryAction>
-        </ListItem>
+
         <ListItem>
           <Typography variant="body2">Subtotal</Typography>
           <ListItemSecondaryAction>
-            <Typography variant="p">₹</Typography>
+            <Typography variant="p">₹{numberToIndianPrice(totalPrice)}</Typography>
           </ListItemSecondaryAction>
         </ListItem>
         <ListItem>
@@ -165,11 +183,22 @@ const CartMenu = () => {
             <Typography variant="p">3.24</Typography>
           </ListItemSecondaryAction>
         </ListItem>
+<Divider component="li" />
 
         <ListItem>
-          <Button alignContent="flex-end" variant="contained" color="primary">
-            Checkout
-          </Button>
+          <Typography variant="h6">Total</Typography>
+          <ListItemSecondaryAction>
+            <Typography variant="h5">₹{numberToIndianPrice(totalPrice)}</Typography>
+          </ListItemSecondaryAction>
+        </ListItem>
+<Divider component="li" />
+
+        <ListItem>
+          <Box className={classes.buttonBox}>
+            <Button variant="contained" color="primary">
+              Checkout
+            </Button>
+          </Box>
         </ListItem>
       </Menu>
     </div>

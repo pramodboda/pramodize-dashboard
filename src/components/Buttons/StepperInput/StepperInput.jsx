@@ -3,20 +3,17 @@ import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-
-import InputBase from "@material-ui/core/InputBase";
-
 import RemoveIcon from "@material-ui/icons/Remove";
 import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    "& > *": {
-      margin: theme.spacing(1),
-    },
+    // display: "flex",
+    // flexDirection: "column",
+    // alignItems: "center",
+    // "& > *": {
+    //   margin: theme.spacing(1),
+    // },
     width:'60px'
   },
 }));
