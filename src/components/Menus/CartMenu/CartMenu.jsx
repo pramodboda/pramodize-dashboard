@@ -6,6 +6,8 @@ import Badge from "@material-ui/core/Badge";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
+import Grid from "@material-ui/core/Grid";
+
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
@@ -17,9 +19,11 @@ import StepperInput from "../../Buttons/StepperInput/StepperInput";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
-    maxWidth: "36ch",
-    backgroundColor: theme.palette.background.paper,
+    width: 100,
+    // maxWidth: "36ch",
+     border: '1px solid red',
+    backgroundColor: "theme.palette.background.paper",
+    
   },
   inline: {
     display: "inline",
@@ -31,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
   cartProductName: {
     width: "100px",
   },
+  listItemStyles:{
+      width: '800px',
+      border: '1px solid red'
+  },
+  
 }));
 
 const cartItems = [
@@ -69,7 +78,7 @@ const CartMenu = () => {
   return (
     <div>
       <IconButton
-        aria-controls="simple-menu"
+        aria-controls="cartMenu"
         aria-haspopup="true"
         onClick={handleClick}
       >
@@ -92,39 +101,39 @@ const CartMenu = () => {
       </IconButton>
 
       <Menu
-        id="simple-menu"
+        id="cartMenu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        
       >
         {cartItems.map((item) => (
           <div>
             <ListItem alignItems="center">
-              <Box>
-                <div>
+                
+              <Grid container alignItems="center">
+                  <Grid item>
                   <img
                     className={classes.cartProductImg}
                     src={item.productImg}
                     alt=""
-                  />{" "}
-                  &nbsp;&nbsp;
-                </div>
-              </Box>
-
-              <Box className={classes.cartProductName}>
-                <Typography variant="subtitle2" gutterBottom>
+                  />
+                  </Grid>
+                  <Grid item>
+                  <Typography variant="subtitle2" gutterBottom>
                   {item.productName}
                 </Typography>
-              </Box>
-              <Box flexGrow={1}>
-                <div>
+                  </Grid>
+                  <Grid item>
+                  <div>
                   <StepperInput />
                 </div>
-              </Box>
-              <Box>
-                <div> ₹{item.price}</div>
-              </Box>
+                  </Grid>
+                  <Grid item>
+                  <div> ₹{item.price}</div>
+                  </Grid>
+              </Grid>
             </ListItem>
             <Divider component="li" />
           </div>

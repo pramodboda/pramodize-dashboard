@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       margin: theme.spacing(1),
     },
+    width:'60px'
   },
 }));
 
