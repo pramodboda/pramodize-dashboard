@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  
 }));
 
 const avatarImg = makeStyles((theme) => ({
@@ -150,6 +151,7 @@ const Navbar = () => {
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
+      MenuProps={{disableScrollLocak: true}}
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
