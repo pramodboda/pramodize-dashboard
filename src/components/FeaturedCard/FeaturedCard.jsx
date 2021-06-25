@@ -51,7 +51,8 @@ const useStyles = makeStyles({
   },
   tinyGraph: {
     height:'100%',
-    border: '1px solid red',
+    // border: '1px solid red',
+    marginTop: '75px'
     
   },
 });

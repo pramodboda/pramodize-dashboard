@@ -13,7 +13,10 @@ import CustomActiveShapePieChart from '../../components/Graphs/CustomActiveShape
 import PaperSizesA from '../../components/PaperSizesA/PaperSizesA';
 import PaperSizesUS from '../../components/PaperSizesUS/PaperSizesUS';
 
-import TopCardAreaChart1 from '../../components/Graphs/TopCardAreaChart1/TopCardAreaChart1';
+import TopCardAreaChart1 from '../../components/Graphs/TopCardAreaChart/TopCardAreaChart1';
+import TopCardAreaChart2 from '../../components/Graphs/TopCardAreaChart/TopCardAreaChart2';
+import TopCardAreaChart3 from '../../components/Graphs/TopCardAreaChart/TopCardAreaChart3';
+import TopCardAreaChart4 from '../../components/Graphs/TopCardAreaChart/TopCardAreaChart4';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,22 +38,22 @@ const useStyles = makeStyles((theme) => ({
         <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <FeaturedCard bgColor="#ECF7FE" cardTitle="Total Users" currentValue="14.3k" when="Annual" tinyGraph={<TopCardAreaChart1/>}/>
+            <FeaturedCard bgColor="#e1f2fd" cardTitle="Total Users" currentValue="14.3k" when="Annual" tinyGraph={<TopCardAreaChart1 graphColor="#0072C3"/>}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <FeaturedCard bgColor="#EBFFF7" cardTitle="New Users" currentValue="2.6k" when="Weekly"/>
+            <FeaturedCard bgColor="#efffe5" cardTitle="New Users" currentValue="2.6k" when="Weekly" tinyGraph={<TopCardAreaChart2 graphColor="#008F58"/>}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <FeaturedCard bgColor="#FFF6EB" cardTitle="Sales" currentValue="$986" when="Today"/>
+            <FeaturedCard bgColor="#ffeafc" cardTitle="Sales" currentValue="$986" when="Today" tinyGraph={<TopCardAreaChart3 graphColor="#fc07d9"/>}/>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} md={3}>
             <Paper elevation={0}>
-            <FeaturedCard bgColor="#F4EFFF" cardTitle="Revenue" currentValue="$34,245" when="Quarter"/>
+            <FeaturedCard bgColor="#e4e6ff" cardTitle="Revenue" currentValue="$34,245" when="Quarter" tinyGraph={<TopCardAreaChart4 graphColor="#0517fc"/>}/>
           </Paper>
         </Grid>
         <Grid item xs={7}>

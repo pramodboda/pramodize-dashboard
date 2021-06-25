@@ -26,14 +26,14 @@ const SimpleAreaChart = () => {
                 <AreaChart width={730} height={250} data={data}
                 margin={{ top: 0, right: 30, left: 0, bottom: 0 }}>
                 <defs>
-                    <linearGradient id="colorAngular" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#e03420" stopOpacity={0.8}/>
+                    {/* <linearGradient id="colorAngular" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#e03420" stopOpacity={0.5}/>
                     <stop offset="95%" stopColor="#e03420" stopOpacity={0}/>
                     </linearGradient>
                     <linearGradient id="colorReact" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#009de0" stopOpacity={0.8}/>
+                    <stop offset="5%" stopColor="#009de0" stopOpacity={0.5}/>
                     <stop offset="95%" stopColor="#009de0" stopOpacity={0}/>
-                    </linearGradient>
+                    </linearGradient> */}
                 </defs>
                 <XAxis dataKey="Month" />
                 <YAxis />

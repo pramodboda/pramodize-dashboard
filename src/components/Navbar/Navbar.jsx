@@ -232,7 +232,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.grow + " pramodize-dashboard-navbar-top"}>
-      <AppBar position="sticky">
+      <AppBar position="fixed">
         <Toolbar>
         
           <IconButton
@@ -244,8 +244,13 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            {/* Material-UI */}
+            Material-UI
           </Typography>
+
+
+          <div className={classes.grow} />
+          
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -259,7 +264,6 @@ const Navbar = () => {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
 
           <NewMsgMenu/>

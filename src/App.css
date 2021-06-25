@@ -83,12 +83,13 @@ h1,h2,h3,h4,h5,h6{
   transition: margin-left 300ms ease;
   position: relative;
 
-
+/* 
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
-  max-width: 100%;
-
+  max-width: 100%; */
+border: 1px solid red;
+display: block;
 }
 
 .main{

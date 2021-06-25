@@ -1,34 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 
-let side_navbar_toggle_btn = function(){
-  let bodyEle = document.getElementsByTagName("BODY")[0];
-  bodyEle.classList.add('side-navbar-minimize');
-}
+// let side_navbar_toggle_btn = function () {
+//   let bodyEle = document.getElementsByTagName("BODY")[0];
+//   bodyEle.classList.add("side-navbar-minimize");
+// };
 
 function Sidebar() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+    if (sidebarOpen) {
+      let bodyEle = document.getElementsByTagName("BODY")[0];
+      bodyEle.classList.add("side-navbar-minimize");
+    } else {
+      let bodyEle = document.getElementsByTagName("BODY")[0];
+      bodyEle.classList.remove("side-navbar-minimize");
+    }
+  };
   return (
     <nav className="side-navbar">
       <ul className="side-navbar-nav">
         <li className="logo">
-          <a href="#" class="pramodizeBrand">
+          <a href="#" className="pramodizeBrand">
             <span>Pramodize</span>
           </a>
-          <span class="side-navbar-toggle-btn" onClick={side_navbar_toggle_btn}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" ><path fill="currentColor" class="fa-primary" d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"/><path fill="currentColor" class="fa-secondary" d="M416 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L269.3 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C432.4 476.9 424.2 480 416 480z"/></svg>
+          <span class="side-navbar-toggle-btn" onClick={toggleSidebar}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                fill="currentColor"
+                class="fa-primary"
+                d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z"
+              />
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M416 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L269.3 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C432.4 476.9 424.2 480 416 480z"
+              />
+            </svg>
           </span>
         </li>
         <li class="nav-item">
           <a href="#" className="nav-link">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-          <g className="fa-group">
-          <path fill="currentColor" className="fa-secondary" d="M510.62 92.63l-95.32 76.28a48.66 48.66 0 0 1 .7 7.09 48 48 0 0 1-96 0 47.44 47.44 0 0 1 .71-7.1l-95.33-76.27a45.11 45.11 0 0 1-29.66 1.59l-101.5 101.5A47.9 47.9 0 1 1 48 160a47.87 47.87 0 0 1 12.28 1.78l101.5-101.5A47.87 47.87 0 0 1 160 48a48 48 0 0 1 96 0 47.44 47.44 0 0 1-.71 7.1l95.32 76.26a46.5 46.5 0 0 1 34.76 0l95.34-76.27A48.66 48.66 0 0 1 480 48a48.36 48.36 0 1 1 30.62 44.63z" />
-          <path fill="currentColor" className="fa-primary"d="M400 320h-64a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V336a16 16 0 0 0-16-16zm160-128h-64a16 16 0 0 0-16 16v288a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V208a16 16 0 0 0-16-16zm-320 0h-64a16 16 0 0 0-16 16v288a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V208a16 16 0 0 0-16-16zM80 352H16a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V368a16 16 0 0 0-16-16z"/>
-          </g>
-          </svg>
-          
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <g className="fa-group">
+                <path
+                  fill="currentColor"
+                  className="fa-secondary"
+                  d="M510.62 92.63l-95.32 76.28a48.66 48.66 0 0 1 .7 7.09 48 48 0 0 1-96 0 47.44 47.44 0 0 1 .71-7.1l-95.33-76.27a45.11 45.11 0 0 1-29.66 1.59l-101.5 101.5A47.9 47.9 0 1 1 48 160a47.87 47.87 0 0 1 12.28 1.78l101.5-101.5A47.87 47.87 0 0 1 160 48a48 48 0 0 1 96 0 47.44 47.44 0 0 1-.71 7.1l95.32 76.26a46.5 46.5 0 0 1 34.76 0l95.34-76.27A48.66 48.66 0 0 1 480 48a48.36 48.36 0 1 1 30.62 44.63z"
+                />
+                <path
+                  fill="currentColor"
+                  className="fa-primary"
+                  d="M400 320h-64a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V336a16 16 0 0 0-16-16zm160-128h-64a16 16 0 0 0-16 16v288a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V208a16 16 0 0 0-16-16zm-320 0h-64a16 16 0 0 0-16 16v288a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V208a16 16 0 0 0-16-16zM80 352H16a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16V368a16 16 0 0 0-16-16z"
+                />
+              </g>
+            </svg>
+
             <span className="link-text">Dashboard</span>
           </a>
-
         </li>
 
         <li className="nav-item">
@@ -117,7 +147,6 @@ function Sidebar() {
             <span className="link-text">Shuttle</span>
           </a>
         </li>
-
       </ul>
     </nav>
   );
