@@ -36,6 +36,11 @@ const PramodizeDashboardTheme = createMuiTheme({
                 backgroundColor: grey[200],
             }
         }
+      },
+      MuiInputBase:{
+          root: {
+            //   background: '#F4EFFF',
+          }
       }
     },
     props:{

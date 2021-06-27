@@ -91,8 +91,6 @@ const Dashboard = () => {
         <Grid item xs={3}>
           <AdBookCard/>
           <CardComp title="Learning Progress" content={<TaskProgressPieChart/>}/>
-          <Button variant="contained" color="primary">This is primary</Button>
-          <Button variant="contained" color="secondary">This is primary</Button>
         </Grid>
 
 
