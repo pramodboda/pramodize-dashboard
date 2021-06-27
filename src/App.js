@@ -7,62 +7,17 @@ import "./components/Sidebar/SidebarStyles.css";
 import "./components/Navbar/NavbarStyles.css";
 
 // Theming
-import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import PramodizeDashboardTheme from "./theme/PramodizeDashboardTheme";
+import {ThemeProvider} from '@material-ui/core/styles';
+
 import 'fontsource-roboto';
 
-const theme = createMuiTheme({
-  palette:{
-    primary:{
-      main: '#8A3FFC' 
-    },
-    // brand: '#FFD216'
-  },
 
-  // shape:{
-  //   borderRadius: 25
-  // },
-  spacing: 8,
-  
-  overrides:{
-    MuiButton:{
-      root:{
-        textTransform: "none"
-      }
-    }
-  },
-  props:{
-    MuiButton:{
-      disableRipple: true,
-      // variant: 'contained',
-      // color: 'primary'
-    },
-    MuiCheckbox:{
-      disableRipple: true
-    },
-    MuiCard:{
-      elevation: 1
-    },
-    typography: {
-      subtitle1: {
-        fontSize: 12,
-      },
-      body1: {
-        fontWeight: 500,
-      },
-      button: {
-        fontStyle: 'italic',
-      },
-      h5:{
-        color: 'red'
-      }
-    },
-  }
-});
 
 function App() {
   return (
 
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={PramodizeDashboardTheme}>
       <div className="App">
         <Sidebar />
         <div className="wrapper">

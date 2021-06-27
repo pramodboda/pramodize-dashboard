@@ -106,7 +106,7 @@ const CartMenu = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <Badge badgeContent={cartItems.length} color="secondary">
+        <Badge badgeContent={cartItems.length} color="error">
           <svg
             class="MuiSvgIcon-root"
             xmlns="http://www.w3.org/2000/svg"

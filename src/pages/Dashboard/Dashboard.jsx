@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+
 import FeaturedCard from "../../components/FeaturedCard/FeaturedCard";
 import CardComp from "../../components/Cards/CardComp/CardComp";
 import AdBookCard from "../../components/Cards/AdBookCard/AdBookCard";
@@ -89,6 +91,8 @@ const Dashboard = () => {
         <Grid item xs={3}>
           <AdBookCard/>
           <CardComp title="Learning Progress" content={<TaskProgressPieChart/>}/>
+          <Button variant="contained" color="primary">This is primary</Button>
+          <Button variant="contained" color="secondary">This is primary</Button>
         </Grid>
 
 

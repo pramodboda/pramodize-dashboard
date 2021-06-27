@@ -255,7 +255,7 @@ const Navbar = () => {
             <UserFriendsMenu />
 
             <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+              <Badge badgeContent={17} color="error">
                 <svg
                   class="MuiSvgIcon-root notificationIcon "
                   xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
 import Box from "@material-ui/core/Box";
-import { spacing } from "@material-ui/system";
 
 import Button from "@material-ui/core/Button";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
@@ -45,7 +44,7 @@ const data = [
 
 const COLORS = ["#eee4ff", "#8A3FFC", "#FFBB28", "#FF8042"];
 
-const RADIAN = Math.PI / 180;
+// const RADIAN = Math.PI / 180;
 
 const TaskProgressPieChart = () => {
   const classes = useStyles();
@@ -94,7 +93,7 @@ const TaskProgressPieChart = () => {
         </Typography>
       </Box>
       <Box mt={2} textAlign="center">
-        <Button mx="auto" variant="contained" color="primary">
+        <Button variant="contained" mx="auto" color="primary">
           Never Stop Learning!
         </Button>
       </Box>

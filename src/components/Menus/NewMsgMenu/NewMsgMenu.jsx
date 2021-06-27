@@ -59,7 +59,7 @@ const NewMsgMenu = () => {
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <Badge badgeContent={4} color="secondary">
+        <Badge badgeContent={4} color="error">
           <svg
             class="MuiSvgIcon-root"
             xmlns="http://www.w3.org/2000/svg"
