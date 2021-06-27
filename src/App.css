@@ -46,6 +46,12 @@
   --bg-primary: #FFD216;
   --bg-gray-900: #1D1D1D;
   --bg-gray-800: #333333;
+
+
+  --brandColor-900: #31135E;
+  --brandColor-800: #491D8B;
+  --brandColor-700: #6929C4;
+  --brandColor-600: #8A3FFC;
   --transition-speed: 300ms;
 }
 

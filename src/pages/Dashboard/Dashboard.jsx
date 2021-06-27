@@ -3,14 +3,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-
 import FeaturedCard from "../../components/FeaturedCard/FeaturedCard";
-import CardComp from "../../components/CardComp/CardComp";
-
+import CardComp from "../../components/Cards/CardComp/CardComp";
+import AdBookCard from "../../components/Cards/AdBookCard/AdBookCard";
+import TaskProgressPieChart from "../../components/Graphs/LearningProgressPieChart/LearningProgressPieChart";
 import SimpleAreaChart from "../../components/Graphs/SimpleAreaChart/SimpleAreaChart";
 import RadialBarChartEx from "../../components/Graphs/RadialBarChartEx/RadialBarChartEx";
 import CustomActiveShapePieChart from "../../components/Graphs/CustomActiveShapePieChart/CustomActiveShapePieChart";
 import SalesOfProductAreaChart from "../../components/Graphs/SalesOfProductAreaChart/SalesOfProductAreaChart";
+
 
 import PaperSizesA from "../../components/PaperSizesA/PaperSizesA";
 import PaperSizesUS from "../../components/PaperSizesUS/PaperSizesUS";
@@ -86,7 +87,8 @@ const Dashboard = () => {
           <CardComp title="Yearly sales of product" content={<SalesOfProductAreaChart />} />
         </Grid>
         <Grid item xs={3}>
-          <CardComp title="Professional Skills" content={<RadialBarChartEx />}/>
+          <AdBookCard/>
+          <CardComp title="Learning Progress" content={<TaskProgressPieChart/>}/>
         </Grid>
 
 

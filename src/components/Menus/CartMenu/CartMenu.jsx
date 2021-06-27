@@ -17,6 +17,10 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
 import StepperInput from "../../Buttons/StepperInput/StepperInput";
 
+import iPhoneImg from "../../../assets/images/iphone-12-pro-max-blue-hero.png";
+import DellMonitorImg from "../../../assets/images/dell-u4919dw.png";
+import iPadImg from "../../../assets/images/ipad-pro-12.png";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -46,20 +50,17 @@ const useStyles = makeStyles((theme) => ({
 const cartItems = [
   {
     productName: "iPhone 12 Pro",
-    productImg:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000",
+    productImg: `${iPhoneImg}`,
     price: 159900,
   },
   {
     productName: "Dell U4919DW",
-    productImg:
-      "https://i.dell.com/is/image/DellContent//content/dam/global-asset-library/Products/peripherals_dell/Monitors/ultrasharp/u4919dw/u4919dw_ldk_0003.psd?fmt=pjpg&amp;pscan=auto&amp;scl=1&amp;hei=402&amp;wid=356&amp;qlt=85,0&amp;resMode=sharp2&amp;op_usm=1.75,0.3,2,0&amp;size=356,402",
+    productImg:`${DellMonitorImg}`,
     price: 229269,
   },
   {
     productName: "iPad Pro",
-    productImg:
-      "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-select-cell-spacegray-202104_GEO_IN?wid=470&hei=556&fmt=p-jpg&qlt=95&.v=1617920526000",
+    productImg: `${iPadImg}`,
     price: 212900,
   },
 ];

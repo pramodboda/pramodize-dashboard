@@ -31,17 +31,31 @@ const theme = createMuiTheme({
     }
   },
   props:{
-    // MuiButton:{
-    //   disableRipple: true,
-    //   variant: 'contained',
-    //   color: 'primary'
-    // },
+    MuiButton:{
+      disableRipple: true,
+      // variant: 'contained',
+      // color: 'primary'
+    },
     MuiCheckbox:{
       disableRipple: true
     },
-    MuiPaper:{
-      // elevation: 0.5
-    }
+    MuiCard:{
+      elevation: 1
+    },
+    typography: {
+      subtitle1: {
+        fontSize: 12,
+      },
+      body1: {
+        fontWeight: 500,
+      },
+      button: {
+        fontStyle: 'italic',
+      },
+      h5:{
+        color: 'red'
+      }
+    },
   }
 });
 

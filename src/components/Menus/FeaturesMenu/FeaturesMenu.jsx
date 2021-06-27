@@ -1,10 +1,26 @@
 import React from "react";
 
+
+import {makeStyles} from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor: '#f0e7ff',
+      
+    },
+    buttonContainer:{
+        '& > *': {
+            margin: theme.spacing(0.5),
+          },
+    }
+  }));
+
 const FeatureMenu = () => {
+    const classes = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -15,9 +31,12 @@ const FeatureMenu = () => {
     setAnchorEl(null);
   };
 
+
+
+
   return (
-    <div>
-      <Button color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>Features</Button>
+    <div className={classes.buttonContainer}>
+      <Button  className={classes.root} color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>Features</Button>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

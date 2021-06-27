@@ -81,21 +81,20 @@ const data = [
   
 const SalesOfProductAreaChart = () => {
     return(
-        <ResponsiveContainer width="100%" aspect={2.5}>                   
+        <ResponsiveContainer width="100%" aspect={1.9}>                   
         <AreaChart width={730} height={250} data={data}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <defs>
-            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
-              <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+            <linearGradient id="SOPColor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8A3FFC" stopOpacity={0.2}/>
+              <stop offset="95%" stopColor="#8A3FFC" stopOpacity={0}/>
             </linearGradient>
           </defs>
-          <XAxis dataKey="name" />
-          <YAxis />
+          <XAxis dataKey="year" />
+          <YAxis/>
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-          {/* <Area type="monotone" dataKey="uv" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" /> */}
-          <Area type="monotone" dataKey="pv" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
+          <Area type="monotone" dataKey="pv" stroke="#8A3FFC" fillOpacity={1} fill="url(#SOPColor)" />
         </AreaChart>
         </ResponsiveContainer>
     )

@@ -1,6 +1,6 @@
 .side-navbar {
   position: fixed;
-  background-color: var(--bg-gray-800);
+  background-color: var(--brandColor-800);
   transition: width 300ms ease;
   overflow: hidden;
   z-index: 99999;
@@ -38,7 +38,7 @@
 
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: var(--bg-gray-900);
+  background: var(--brandColor-900);
   color: var(--text-secondary);
 }
 
@@ -115,7 +115,7 @@
 }
 
 .side-navbar-toggle-btn:hover {
-  background: #000;
+  background: var(--brandColor-900);
 }
 
 .side-navbar-minimize .side-navbar {
