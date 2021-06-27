@@ -19,6 +19,7 @@ import NewMsgMenu from "../Menus/NewMsgMenu/NewMsgMenu";
 import UserFriendsMenu from "../Menus/UserFriendsMenu/UserFriendsMenu";
 import CartMenu from "../Menus/CartMenu/CartMenu";
 import LocalLanguageMenu from "../Menus/LocalLanguageMenu/LocalLanguageMenu";
+import FeatureMenu from "../Menus/FeaturesMenu/FeaturesMenu";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -82,7 +83,6 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  
 }));
 
 const avatarImg = makeStyles((theme) => ({
@@ -132,14 +132,11 @@ const Navbar = () => {
     setAnchorEl(event.currentTarget);
   };
 
-
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
   };
 
-
-  
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -151,7 +148,7 @@ const Navbar = () => {
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
-      MenuProps={{disableScrollLocak: true}}
+      MenuProps={{ disableScrollLocak: true }}
       anchorEl={anchorEl}
       anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={menuId}
@@ -164,7 +161,6 @@ const Navbar = () => {
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
     </Menu>
   );
-
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -236,22 +232,10 @@ const Navbar = () => {
     <div className={classes.grow + " pramodize-dashboard-navbar-top"}>
       <AppBar position="fixed">
         <Toolbar>
-        
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
-          </Typography>
-
-
-          <div className={classes.grow} />
+          <FeatureMenu />
+          <FeatureMenu />
           
+          <div className={classes.grow} />
 
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -267,9 +251,8 @@ const Navbar = () => {
             />
           </div>
           <div className={classes.sectionDesktop}>
-
-          <NewMsgMenu/>
-          <UserFriendsMenu/>
+            <NewMsgMenu />
+            <UserFriendsMenu />
 
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
@@ -295,8 +278,8 @@ const Navbar = () => {
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Favorite />
             </IconButton>
-            <CartMenu/>
-            <LocalLanguageMenu/>
+            <CartMenu />
+            <LocalLanguageMenu />
             <IconButton
               className={classes2.root}
               color="primary"

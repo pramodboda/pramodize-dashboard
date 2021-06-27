@@ -1,6 +1,13 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+
+
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,14 +15,6 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
-
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-// import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { flexbox } from "@material-ui/system";
 
 const columns = [
   { id: "name", label: "Name", minWidth: "150px" },
@@ -40,7 +39,7 @@ const rows = [
   createData("A0", "84.1 x 118.9", "33.1 x 46.8"),
 ];
 
-const useStyles = makeStyles((theme)=>({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
@@ -67,21 +66,16 @@ const PaperSizesA = () => {
   };
 
   return (
-    <Paper className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography flexGrow={1} edge="start" variant="h6" className={classes.title}>
-            A Sizes
-          </Typography>
-          <IconButton
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
+    <Card>
+      <CardHeader
+        action={
+          <IconButton>
+            <MoreVertIcon />
           </IconButton>
-        </Toolbar>
-      </AppBar>
+        }
+        title="A Sizes"
+      />
+
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -128,7 +122,7 @@ const PaperSizesA = () => {
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
-    </Paper>
+    </Card>
   );
 };
 

@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 
-// let side_navbar_toggle_btn = function () {
-//   let bodyEle = document.getElementsByTagName("BODY")[0];
-//   bodyEle.classList.add("side-navbar-minimize");
-// };
-
 function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    console.log(sidebarOpen);
     if (sidebarOpen) {
       let bodyEle = document.getElementsByTagName("BODY")[0];
       bodyEle.classList.add("side-navbar-minimize");

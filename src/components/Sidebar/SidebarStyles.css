@@ -111,7 +111,7 @@
   padding: 21px 0;
   display: inline-block;
   text-align: center;
-
+  cursor: pointer;
 }
 
 .side-navbar-toggle-btn:hover {
