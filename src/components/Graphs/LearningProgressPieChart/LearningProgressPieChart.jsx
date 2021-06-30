@@ -24,14 +24,20 @@ const useStyles = makeStyles((theme) => ({
   completedStatusTxt: {
     position: "absolute",
     margin: "auto",
-    top: '50px',
+    top: '0px',
     right: 0,
     left: 0,
     bottom: 0,
+    width: '105px',
+    height: '105px',
+    background: '#8A3FFC',
+    color:'#f9f9f9',
+    borderRadius: '100%',
   },
-  centeredContent:{
-    textAlign: 'center'
-  }
+  // centeredContent:{
+  //   textAlign: 'center',
+  //   marginTop: '30px'
+  // }
 }));
 
 const totalProgress = 100;
@@ -56,7 +62,7 @@ const TaskProgressPieChart = () => {
           textAlign="center"
           className={classes.completedStatusTxt}
         >
-          <Typography variant="h3" component="h3">
+          <Typography variant="h3" component="h3" color="secondary">
             {completedStatus + "%"}
           </Typography>
         </Box>
