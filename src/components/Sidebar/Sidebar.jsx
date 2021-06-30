@@ -19,11 +19,14 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     backgroundColor: "transparent",
     // overflow: 'auto',
-
+    
+    "& .MuiTypography-body1":{
+      fontSize: '0.9rem',
+    },
     "& .MuiListItemIcon-root svg": {
       width: "18px",
       height: "18px",
-      paddingLeft: "5px",
+      paddingLeft: "8px",
     },
     "& .MuiButtonBase-root": {
       "& .MuiListItemIcon-root, & .MuiListItemText-root": {
@@ -48,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
   },
   brandLogo: {
     padding: 0,
+    background: '#31135E'
   },
 }));
 
