@@ -3,12 +3,10 @@ import { fade, makeStyles, withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import Badge from "@material-ui/core/Badge";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import Favorite from "@material-ui/icons/Favorite";
@@ -178,18 +176,17 @@ const Navbar = () => {
           <Badge badgeContent={4} color="secondary">
             {/* <MailIcon /> */}
             <svg
-              class="MuiSvgIcon-root"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
               <path
                 fill="currentColor"
-                class="fa-primary"
+                className="fa-primary"
                 d="M127.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S145.7 271.1 127.1 271.1zM256 271.1c-17.75 0-31.1-14.25-31.1-31.1s14.25-32 31.1-32s31.1 14.25 31.1 32S273.8 271.1 256 271.1zM383.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S401.7 271.1 383.1 271.1z"
               />
               <path
                 fill="currentColor"
-                class="fa-secondary"
+                className="fa-secondary"
                 d="M256 31.1c-141.4 0-255.1 93.12-255.1 208c0 49.62 21.35 94.98 56.97 130.7c-12.5 50.37-54.27 95.27-54.77 95.77c-2.25 2.25-2.875 5.734-1.5 8.734c1.249 3 4.021 4.766 7.271 4.766c66.25 0 115.1-31.76 140.6-51.39c32.63 12.25 69.02 19.39 107.4 19.39c141.4 0 255.1-93.13 255.1-207.1S397.4 31.1 256 31.1zM127.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S145.7 271.1 127.1 271.1zM256 271.1c-17.75 0-31.1-14.25-31.1-31.1s14.25-32 31.1-32s31.1 14.25 31.1 32S273.8 271.1 256 271.1zM383.1 271.1c-17.75 0-32-14.25-32-31.1s14.25-32 32-32s32 14.25 32 32S401.7 271.1 383.1 271.1z"
               />
             </svg>
@@ -202,11 +199,11 @@ const Navbar = () => {
           <Badge badgeContent={11} color="secondary">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path
-                class="fa-primary"
+                className="fa-primary"
                 d="M288 448c0 35.38-28.63 64-64 64S160 483.4 160 448H288z"
               />
               <path
-                class="fa-secondary"
+                className="fa-secondary"
                 d="M439.4 362.3c-19.25-20.75-55.5-52-55.5-154.3c0-77.75-54.38-139.9-127.9-155.1V32c0-17.62-14.38-32-32-32S192 14.38 192 32v20.88C118.5 68.13 64.13 130.3 64.13 208c0 102.3-36.25 133.5-55.5 154.3C2.625 368.8 0 376.5 0 384c.125 16.38 13 32 32.13 32h383.8c19.12 0 32-15.62 32.13-32C448 376.5 445.4 368.8 439.4 362.3z"
               />
             </svg>
@@ -257,22 +254,22 @@ const Navbar = () => {
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="error">
                 <svg
-                  class="MuiSvgIcon-root notificationIcon "
+                  className="MuiSvgIcon-root notificationIcon "
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
                   <path
                     fill="currentColor"
-                    class="fa-primary"
+                    className="fa-primary"
                     d="M288 448c0 35.38-28.63 64-64 64S160 483.4 160 448H288z"
                   />
                   <path
                     fill="currentColor"
-                    class="fa-secondary"
+                    className="fa-secondary"
                     d="M439.4 362.3c-19.25-20.75-55.5-52-55.5-154.3c0-77.75-54.38-139.9-127.9-155.1V32c0-17.62-14.38-32-32-32S192 14.38 192 32v20.88C118.5 68.13 64.13 130.3 64.13 208c0 102.3-36.25 133.5-55.5 154.3C2.625 368.8 0 376.5 0 384c.125 16.38 13 32 32.13 32h383.8c19.12 0 32-15.62 32.13-32C448 376.5 445.4 368.8 439.4 362.3z"
                   />
                 </svg>
-                <div class="circleAni"></div>
+                <div className="circleAni"></div>
               </Badge>
             </IconButton>
             <IconButton aria-label="show 4 new mails" color="inherit">

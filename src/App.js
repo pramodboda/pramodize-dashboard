@@ -20,6 +20,7 @@ function App() {
     <ThemeProvider theme={PramodizeDashboardTheme}>
       <div className="App">
         <Sidebar />
+        
         <div className="wrapper">
           <Navbar />
           <div className="main">

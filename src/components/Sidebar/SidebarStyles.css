@@ -1,10 +1,26 @@
 .side-navbar {
   position: fixed;
   background-color: var(--brandColor-800);
-  transition: width 300ms ease;
-  overflow: hidden;
+  /* transition: width 300ms ease; */
+  overflow: auto;
   z-index: 99999;
+  height: 100vh;
 }
+
+.side-navbar::-webkit-scrollbar{
+  width: 0.3rem;
+  z-index: 9999;
+}
+.side-navbar::-webkit-scrollbar-track{
+  /* background: #000; */
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.side-navbar:hover::-webkit-scrollbar-thumb{
+  background: #FFD216;
+  border-radius: 25px;
+}
+
+
 
 .side-navbar-nav {
   list-style: none;
@@ -67,15 +83,6 @@
   transition: var(--transition-speed);
 }
 
-/* .side-navbar .logo a{
-  margin-bottom: 1rem;
-  text-align: center;
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
-  font-size: 1.5rem;
-  text-decoration: none;
-  padding: 12px 15px;
-} */
 
 .pramodizeBrand{
   font-family: "DM Serif Display",serif;
@@ -83,10 +90,10 @@
   display: inline-block;
   padding: 12px 20px;
   width: 9.5rem;
-
   font-size: 1.5rem;
   text-decoration: none;
   transition: width 300ms ease;
+  
 }
 
 .side-navbar .logo svg {
@@ -111,6 +118,7 @@
   padding: 21px 0;
   display: inline-block;
   text-align: center;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -119,11 +127,11 @@
 }
 
 .side-navbar-minimize .side-navbar {
-  width: 4rem;
+  width: 4.3rem;
 }
 
 .side-navbar-minimize .wrapper {
-  margin-left: 4rem;
+  margin-left: 4.3rem;
 }
 
 .side-navbar-minimize .pramodizeBrand {
@@ -132,12 +140,20 @@
 
 
 .side-navbar-minimize .side-navbar:hover {
-    width: 16rem;
+    width: 16.3rem;
 }
 
 .side-navbar-minimize .wrapper .MuiAppBar-positionFixed{
-  margin-left: 4rem;
-  width: calc(100% - 4rem);
+  margin-left: 4.3rem;
+  width: calc(100% - 4.3rem);
+}
+
+.side-navbar-minimize .MuiCollapse-container {
+  display: none;
+}
+
+.side-navbar:hover .MuiCollapse-container{
+  display: block;
 }
 
 
@@ -170,8 +186,7 @@
 @media only screen and (min-width: 600px) {
   .side-navbar {
     top: 0;
-    /* width: 4.2rem; */
-    width: 16rem;
+    width: 16.3rem;
     height: 100vh;
   }
 
