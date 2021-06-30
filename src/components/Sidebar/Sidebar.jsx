@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     // overflow: 'auto',
     
     "& .MuiTypography-body1":{
-      fontSize: '0.9rem',
+      fontSize: '0.95rem',
     },
     "& .MuiListItemIcon-root svg": {
       width: "18px",

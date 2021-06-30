@@ -115,15 +115,16 @@
 
 .side-navbar-toggle-btn {
   width: 4rem;
-  padding: 21px 0;
+  padding: 20px 0;
   display: inline-block;
   text-align: center;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   cursor: pointer;
 }
 
 .side-navbar-toggle-btn:hover {
-  background: var(--brandColor-900);
+  /* background: var(--brandColor-900); */
+  background: #260f49;
 }
 
 .side-navbar-minimize .side-navbar {
