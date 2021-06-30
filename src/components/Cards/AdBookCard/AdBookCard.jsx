@@ -28,7 +28,6 @@ const AdBookCard = () => {
   const classes = useStyles();
 
   return (
-    <Box mb={3}>
       <Card className={classes.root}>
         <CardActionArea>
           <CardContent>
@@ -46,7 +45,6 @@ const AdBookCard = () => {
           </CardContent>
         </CardActionArea>
       </Card>
-    </Box>
   );
 };
 

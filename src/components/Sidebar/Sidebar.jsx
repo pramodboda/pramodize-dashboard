@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     backgroundColor: "transparent",
+    paddingTop: 0,
     // overflow: 'auto',
     
     "& .MuiTypography-body1":{

@@ -81,7 +81,7 @@ const data = [
   
 const SalesOfProductAreaChart = () => {
     return(
-        <ResponsiveContainer width="100%" aspect={4.9}>                   
+        <ResponsiveContainer width="100%" aspect={4.95}>                   
         <AreaChart width={730} height={250} data={data}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <defs>
