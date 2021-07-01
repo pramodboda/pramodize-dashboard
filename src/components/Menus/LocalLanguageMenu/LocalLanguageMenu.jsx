@@ -104,8 +104,7 @@ const LocalLanguageMenu = () => {
     if(otherNumbers !== '')
         lastThree = ',' + lastThree;
     var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree + afterPoint;
-    
-    console.log(res);
+
   }
 
   return (
@@ -130,6 +129,9 @@ const LocalLanguageMenu = () => {
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
+        MenuListProps={{
+          disablePadding: true
+        }}
         onClose={handleClose}
       >
         {options.map((option, index) => (

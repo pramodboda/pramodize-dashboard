@@ -65,7 +65,7 @@ body {
   color: black;
   background-color: #f0f3f7;
   margin: 0;
-  padding: 0;
+  padding: 0 !important;
 }
 
 body::-webkit-scrollbar {

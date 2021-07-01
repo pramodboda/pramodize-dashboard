@@ -12,12 +12,7 @@ const PramodizeDashboardTheme = createMuiTheme({
         main: "#f9f9f9",
         contrastText: '#8A3FFC',
       }
-      // brand: '#FFD216'
     },
-  
-    // shape:{
-    //   borderRadius: 25
-    // },
     spacing: 8,
     
     overrides:{
@@ -39,7 +34,7 @@ const PramodizeDashboardTheme = createMuiTheme({
       },
       MuiInputBase:{
           root: {
-            //   background: '#F4EFFF',
+              // background: '#F4EFFF',
           }
       }
     },
@@ -54,6 +49,7 @@ const PramodizeDashboardTheme = createMuiTheme({
       MuiCard:{
         elevation: 1
       },
+
       typography: {
         subtitle1: {
           fontSize: 12,
